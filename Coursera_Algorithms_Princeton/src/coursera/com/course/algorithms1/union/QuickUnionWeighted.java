@@ -36,28 +36,30 @@ public class QuickUnionWeighted implements Runnable {
         this.sizeArray = new int[loc_inputArray.length];
         for(int i= 0 ; i < sizeArray.length ; i++)
         {
-            sizeArray[i] = 0;
+            sizeArray[i] = 1;
         }
-
     }
 
 
     @Override
     public void run() {
 
+        System.out.println(Arrays.toString(this.unionArray));
         union(4,3);
         union(3,8);
         union(6,5);
         union(9,4);
         union(2,1);
-        System.out.println(connected(8,9));
-        System.out.println(connected(5,4));
+
         union(5,0);
         union(7,2);
         union(6,1);
         union(7,3);
         System.out.println(Arrays.toString(this.unionArray));
+        //System.out.println(Arrays.toString(this.sizeArray));
 
+        System.out.println(connected(8,9));
+        System.out.println(connected(5,4));
 
     }
 
@@ -68,15 +70,21 @@ public class QuickUnionWeighted implements Runnable {
         int loc_weight_p = weight(loc_id_p);
         int loc_weight_q = weight(loc_id_q);
 
-        if(loc_weight_p >= loc_weight_q)
+        if(loc_weight_q >= loc_weight_p)
         {
-            this.sizeArray[loc_id_p] = this.sizeArray[loc_id_p]+ this.sizeArray[loc_id_q];
-            this.unionArray[loc_id_q] = loc_id_p;
+            //System.out.println(Arrays.toString(this.sizeArray));
+            this.sizeArray[loc_id_q] += this.sizeArray[loc_id_p];
+            this.unionArray[p] = loc_id_q;
         }
         else{
-            this.sizeArray[loc_id_q] = this.sizeArray[loc_id_q]+ this.sizeArray[loc_id_p];
-            this.unionArray[loc_id_p] = loc_id_q;
+
+            //System.out.println(Arrays.toString(this.sizeArray));
+            this.sizeArray[loc_id_p] += this.sizeArray[loc_id_q];
+            this.unionArray[q] = loc_id_p;
         }
+
+        //this.unionArray[loc_id_p] = this.unionArray[loc_id_q];
+
 
     }
 

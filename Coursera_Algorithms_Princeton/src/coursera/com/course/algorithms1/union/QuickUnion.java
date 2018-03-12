@@ -58,14 +58,15 @@ public class QuickUnion implements Runnable {
         union(9,4);
         union(2,1);
 
-        System.out.println(connected(8,9));
-        System.out.println(connected(5,4));
+
         union(5,0);
         union(7,2);
         union(6,1);
         union(7,3);
 
         System.out.println(Arrays.toString(this.searchArray));
+        System.out.println(connected(8,9));
+        System.out.println(connected(5,4));
 
     }
 

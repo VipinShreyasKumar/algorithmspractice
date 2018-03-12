@@ -22,10 +22,10 @@ public class Algorithms1Framework {
         /**
          * QuickUnion algorithm
          */
-        QuickUnion qUnion = new QuickUnion(unionTestArray);
+        QuickUnion qUnion = new QuickUnion(new int[]{0,1,2,3,4,5,6,7,8,9});
         qUnion.run();
 
-        QuickUnionWeighted qWeighted = new QuickUnionWeighted(unionTestArray);
+        QuickUnionWeighted qWeighted = new QuickUnionWeighted(new int[]{0,1,2,3,4,5,6,7,8,9});
         qWeighted.run();
 
     }
