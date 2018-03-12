@@ -6,6 +6,7 @@
 package coursera.com.course.algorithms1;
 
 import coursera.com.course.algorithms1.union.QuickUnion;
+import coursera.com.course.algorithms1.union.QuickUnionWeighted;
 
 public class Algorithms1Framework {
 
@@ -23,6 +24,9 @@ public class Algorithms1Framework {
          */
         QuickUnion qUnion = new QuickUnion(unionTestArray);
         qUnion.run();
+
+        QuickUnionWeighted qWeighted = new QuickUnionWeighted(unionTestArray);
+        qWeighted.run();
 
     }
 
