@@ -73,9 +73,10 @@ public class QuickUnion implements Runnable {
 
     private void union(int p , int q)
     {
-        //int loc_id_p = id(p);
+        int loc_id_p = id(p);
         int loc_id_q = id(q);
-        this.searchArray[p] = loc_id_q;
+
+        this.searchArray[loc_id_p] = loc_id_q;
     }
 
     private int id(int p)

@@ -71,15 +71,13 @@ public class QuickUnionWeighted implements Runnable {
 
         if(loc_weight_q >= loc_weight_p)
         {
-
             this.sizeArray[loc_id_q] += this.sizeArray[loc_id_p];
-            this.unionArray[p] = loc_id_q;
+            this.unionArray[loc_id_p] = loc_id_q;
         }
         else{
 
-
             this.sizeArray[loc_id_p] += this.sizeArray[loc_id_q];
-            this.unionArray[q] = loc_id_p;
+            this.unionArray[loc_id_q] = loc_id_p;
         }
     }
 
