@@ -56,7 +56,6 @@ public class QuickUnionWeighted implements Runnable {
         union(6,1);
         union(7,3);
         System.out.println(Arrays.toString(this.unionArray));
-        //System.out.println(Arrays.toString(this.sizeArray));
 
         System.out.println(connected(8,9));
         System.out.println(connected(5,4));
@@ -72,26 +71,24 @@ public class QuickUnionWeighted implements Runnable {
 
         if(loc_weight_q >= loc_weight_p)
         {
-            //System.out.println(Arrays.toString(this.sizeArray));
+
             this.sizeArray[loc_id_q] += this.sizeArray[loc_id_p];
             this.unionArray[p] = loc_id_q;
         }
         else{
 
-            //System.out.println(Arrays.toString(this.sizeArray));
+
             this.sizeArray[loc_id_p] += this.sizeArray[loc_id_q];
             this.unionArray[q] = loc_id_p;
         }
-
-        //this.unionArray[loc_id_p] = this.unionArray[loc_id_q];
-
-
     }
 
     private int id(int p)
     {
-        while(p != this.unionArray[p])
+        while(p != this.unionArray[p]) {
+            //this.unionArray[p] = this.unionArray[this.unionArray[p]];
             p = this.id(this.unionArray[p]);
+        }
         return p;
     }
 
