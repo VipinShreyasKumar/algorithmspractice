@@ -24,7 +24,7 @@ public class TupleSumWithBinarySearch {
 
     private void computeTupleSum(int[] computeArray)
     {
-        System.out.println(computeArray);
+        System.out.println(Arrays.toString(computeArray));
         Arrays.sort(numArray);
         int N = computeArray.length;
         for(int i = 0; i < N ; i++ )

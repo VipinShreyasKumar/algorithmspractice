@@ -31,7 +31,7 @@ public class TuplesSum {
                 {
                     if(numArray[i]+numArray[j]+numArray[k] == 0)
                     {
-                        System.out.println(numArray[i]+" "+numArray[j]+" "+numArray[k]);
+                        System.out.println("Combination : "+numArray[i]+" "+numArray[j]+" "+numArray[k]);
                     }
                 }
             }
